@@ -32,7 +32,7 @@ export default function HeroV2() {
       {/* Hero heading */}
       <div className="mt-6 overflow-hidden sm:mt-4 md:-mt-5">
         <FadeIn delay={0.15} y={40}>
-          <h1 className="hero-heading w-full whitespace-nowrap text-center font-display text-[14vw] font-black uppercase leading-none tracking-tight sm:text-[15vw] md:text-[16vw] lg:text-[17.5vw]">
+          <h1 className="hero-heading w-full whitespace-nowrap text-center font-display text-[9vw] font-black uppercase leading-none tracking-tight sm:text-[8vw] md:text-[7vw] lg:text-[6.5vw]">
             hi, i&apos;m suresh
           </h1>
         </FadeIn>

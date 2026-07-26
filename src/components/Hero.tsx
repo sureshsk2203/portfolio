@@ -19,9 +19,9 @@ export default function Hero() {
           </Reveal>
 
           <Reveal delay={0.1} y={30} className="mt-6">
-            <h1 className="hero-heading w-full whitespace-nowrap text-center font-display text-[9vw] font-black uppercase leading-none tracking-tight sm:text-[8vw] md:text-[7vw] lg:text-[6.5vw]">
-  hi, i&apos;m suresh
-</h1>
+            <h1 className="font-display text-[2.5rem] font-semibold leading-[1.05] tracking-tight sm:text-6xl md:text-6xl lg:text-[4rem]">
+              Hi, I'm <span className="grad-text">Suresh Kumar A</span>
+            </h1>
           </Reveal>
 
           <Reveal delay={0.2} y={20} className="mt-5">

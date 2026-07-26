@@ -148,6 +148,7 @@ function ProjectCard({ project, index, total }: { project: typeof PROJECTS[numbe
   const rawOpacity = useTransform(scrollYProgress, [0, 0.85, 1], [1, 1, isLastCard ? 1 : 0.3]);
   const rawY = useTransform(scrollYProgress, [0, 1], [0, isLastCard ? 0 : -14]);
 
+  // Smooth, fluid motion instead of scroll-linked jumpiness
   const springConfig = { stiffness: 180, damping: 30, mass: 0.7 };
   const scale = useSpring(rawScale, springConfig);
   const opacity = useSpring(rawOpacity, springConfig);
