@@ -12,16 +12,16 @@ const NAV_LINKS = [
 
 export default function HeroV2() {
   return (
-    <section className="relative flex h-screen flex-col" style={{ overflowX: 'clip' }}>
+    <section className="relative flex min-h-screen flex-col overflow-hidden sm:h-screen">
       {/* Navbar */}
       <FadeIn delay={0} y={-20}>
-        <nav className="flex items-center justify-between px-6 pt-6 md:px-10 md:pt-8">
+        <nav className="relative z-20 flex items-center justify-between gap-2 px-5 pt-6 sm:px-6 md:px-10 md:pt-8">
           {NAV_LINKS.map((link) => (
             <a
               key={link.label}
               href={link.href}
               data-cursor-hover
-              className="text-sm font-medium uppercase tracking-wider text-[#D7E2EA] transition-opacity duration-200 hover:opacity-70 md:text-lg lg:text-[1.4rem]"
+              className="text-[11px] font-medium uppercase tracking-wider text-[#D7E2EA] transition-opacity duration-200 hover:opacity-70 sm:text-sm md:text-lg lg:text-[1.4rem]"
             >
               {link.label}
             </a>
@@ -30,17 +30,18 @@ export default function HeroV2() {
       </FadeIn>
 
       {/* Hero heading */}
-      <div className="mt-6 overflow-hidden sm:mt-4 md:-mt-5">
+      <div className="relative z-0 mt-10 overflow-hidden px-4 sm:mt-10 sm:px-0 md:mt-8">
         <FadeIn delay={0.15} y={40}>
-          <h1 className="hero-heading w-full whitespace-nowrap text-center font-display text-[9vw] font-black uppercase leading-none tracking-tight sm:text-[8vw] md:text-[7vw] lg:text-[6.5vw]">
+          <h1 className="hero-heading w-full whitespace-nowrap text-center font-display text-[11.5vw] font-black uppercase leading-none tracking-tight sm:text-[8.5vw] md:text-[7vw] lg:text-[6.5vw]">
             hi, i&apos;m suresh
           </h1>
         </FadeIn>
       </div>
 
-      {/* Portrait — Magnet effect */}
-      <div className="pointer-events-none absolute left-1/2 top-1/2 z-10 w-[240px] -translate-x-1/2 -translate-y-1/2 sm:top-auto sm:w-[300px] sm:translate-y-0 sm:bottom-0 md:w-[360px] lg:w-[420px]">
-        <div className="pointer-events-auto">
+      {/* Portrait — normal flow on mobile (no overlap). From sm+, absolute relative to the
+          whole section (not a flex sibling) so it never fights heading/nav for space. */}
+      <div className="relative z-10 mt-8 flex justify-center sm:mt-0 sm:contents">
+        <div className="w-[190px] sm:absolute sm:bottom-6 sm:left-1/2 sm:w-[280px] sm:-translate-x-1/2 md:bottom-8 md:w-[340px] lg:w-[400px]">
           <Magnet padding={150} strength={5} activeTransition="transform 0.3s ease-out" inactiveTransition="transform 0.6s ease-in-out">
             <FadeIn delay={0.6} y={30}>
               <img
@@ -54,12 +55,15 @@ export default function HeroV2() {
         </div>
       </div>
 
+      {/* Spacer to push bottom bar down on mobile where portrait is in normal flow */}
+      <div className="flex-1 sm:hidden" />
+
       {/* Bottom bar */}
-      <div className="mt-auto flex items-end justify-between px-6 pb-7 sm:pb-8 md:px-10 md:pb-10">
+      <div className="relative z-20 mt-8 flex flex-col items-center gap-5 px-5 pb-8 sm:mt-auto sm:flex-row sm:items-end sm:justify-between sm:px-6 sm:pb-8 md:px-10 md:pb-10">
         <FadeIn delay={0.35} y={20}>
           <p
-            className="max-w-[160px] font-light uppercase leading-snug tracking-wide text-[#D7E2EA] sm:max-w-[220px] md:max-w-[260px]"
-            style={{ fontSize: 'clamp(0.75rem, 1.4vw, 1.5rem)' }}
+            className="max-w-[260px] text-center font-light uppercase leading-snug tracking-wide text-[#D7E2EA] sm:max-w-[220px] sm:text-left md:max-w-[260px]"
+            style={{ fontSize: 'clamp(0.8rem, 1.4vw, 1.5rem)' }}
           >
             UI/UX designer &amp; full stack developer building clean digital experiences
           </p>

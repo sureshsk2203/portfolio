@@ -42,7 +42,16 @@ export default function AnimatedText({ text, className = '', style }: AnimatedTe
   const chars = text.split('');
 
   return (
-    <p ref={ref} className={className} style={style}>
+    <p
+      ref={ref}
+      className={className}
+      style={{
+        ...style,
+        userSelect: 'none',
+        WebkitUserSelect: 'none',
+        touchAction: 'pan-y',
+      }}
+    >
       {chars.map((char, i) => (
         <AnimatedChar key={i} char={char} index={i} total={chars.length} progress={scrollYProgress} />
       ))}

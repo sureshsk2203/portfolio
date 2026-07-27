@@ -83,18 +83,18 @@ function ProjectVisual({ project }: { project: typeof PROJECTS[number] }) {
 
   if (images.length >= 2) {
     return (
-      <div className="mt-6 flex flex-1 gap-3 sm:mt-8">
+      <div className="mt-5 flex flex-1 flex-row gap-2.5 sm:mt-8 sm:gap-3">
         <motion.div
           whileHover={{ scale: 1.02 }}
           transition={{ duration: 0.4, ease: [0.25, 0.1, 0.25, 1] }}
-          className="w-[45%] overflow-hidden rounded-[40px] border border-[#D7E2EA]/20 sm:rounded-[50px] md:rounded-[60px]"
+          className="h-28 w-[45%] overflow-hidden rounded-2xl border border-[#D7E2EA]/20 sm:h-auto sm:rounded-[50px] md:rounded-[60px]"
         >
           <img src={images[0]} alt={`${project.name} screenshot 1`} className="h-full w-full object-cover object-top" loading="lazy" />
         </motion.div>
         <motion.div
           whileHover={{ scale: 1.02 }}
           transition={{ duration: 0.4, ease: [0.25, 0.1, 0.25, 1] }}
-          className="w-[55%] overflow-hidden rounded-[40px] border border-[#D7E2EA]/20 sm:rounded-[50px] md:rounded-[60px]"
+          className="h-28 w-[55%] overflow-hidden rounded-2xl border border-[#D7E2EA]/20 sm:h-auto sm:rounded-[50px] md:rounded-[60px]"
         >
           <img src={images[1]} alt={`${project.name} screenshot 2`} className="h-full w-full object-cover object-top" loading="lazy" />
         </motion.div>
@@ -155,51 +155,52 @@ function ProjectCard({ project, index, total }: { project: typeof PROJECTS[numbe
   const y = useSpring(rawY, springConfig);
 
   return (
-    <div
-      ref={wrapperRef}
-      className="relative"
-      style={{ height: isLastCard ? '85vh' : '180vh' }}
-    >
-      <div
-        className="sticky h-[85vh] overflow-hidden"
-        style={{ top: `calc(6rem + ${index * 14}px)`, zIndex: index + 1 }}
-      >
+    <div ref={wrapperRef} className="relative">
+      <div className={isLastCard ? 'h-[62vh] sm:h-[85vh]' : 'h-[124vh] sm:h-[180vh]'}>
+        <div
+          className="sticky h-[62vh] sm:h-[85vh]"
+          style={{ top: `calc(6rem + ${index * 14}px)`, zIndex: index + 1 }}
+        >
         <motion.div
           initial={{ opacity: 0, y: 60 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: '-80px' }}
           transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1] }}
+          whileHover={{ borderColor: 'rgba(79,124,255,0.6)' }}
           style={{ scale, opacity, y }}
-          className="h-full overflow-hidden rounded-[40px] border-2 border-[#D7E2EA] bg-[#0C0C0C] p-4 sm:rounded-[50px] sm:p-6 md:rounded-[60px] md:p-8"
+          className="h-full overflow-hidden rounded-[40px] border-2 border-[#D7E2EA] bg-[#0C0C0C] p-4 transition-colors duration-300 sm:rounded-[50px] sm:p-6 md:rounded-[60px] md:p-8"
         >
           <div className="flex h-full flex-col">
             {/* Top row */}
-            <div className="flex flex-wrap items-start justify-between gap-4">
-              <div className="flex items-center gap-3 sm:gap-5">
+            <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-start sm:justify-between sm:gap-4">
+              <div className="flex items-center gap-2.5 sm:gap-5">
                 <span
-                  className="font-black text-[#0C0C0C]"
+                  className="shrink-0 font-black text-[#0C0C0C]"
                   style={{
-                    fontSize: 'clamp(2rem, 6vw, 84px)',
+                    fontSize: 'clamp(1.75rem, 6vw, 84px)',
                     WebkitTextStroke: '1.5px #D7E2EA',
                   }}
                 >
                   {project.num}
                 </span>
-                <div>
-                  <p className="font-mono text-xs uppercase tracking-widest text-[#8891A7] sm:text-sm">
+                <div className="min-w-0">
+                  <p className="truncate font-mono text-[10px] uppercase tracking-widest text-[#8891A7] sm:text-xs md:text-sm">
                     {project.category}
                   </p>
-                  <h3 className="mt-1 font-display text-lg font-semibold text-[#D7E2EA] sm:text-xl md:text-2xl">
+                  <h3 className="mt-1 font-display text-base font-semibold leading-tight text-[#D7E2EA] sm:text-xl md:text-2xl">
                     {project.name}
                   </h3>
                 </div>
               </div>
-              <LiveProjectButton href={project.liveUrl} />
+              <div className="self-start sm:self-auto">
+                <LiveProjectButton href={project.liveUrl} />
+              </div>
             </div>
 
             <ProjectVisual project={project} />
           </div>
         </motion.div>
+        </div>
       </div>
     </div>
   );
