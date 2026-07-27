@@ -156,9 +156,9 @@ function ProjectCard({ project, index, total }: { project: typeof PROJECTS[numbe
 
   return (
     <div ref={wrapperRef} className="relative">
-      <div className={isLastCard ? 'h-[62vh] sm:h-[85vh]' : 'h-[85vh] sm:h-[180vh]'}>
-        <div
-          className="sticky h-[62vh] sm:h-[85vh]"
+<div className={isLastCard ? 'h-[52vh] sm:h-[85vh]' : 'h-[62vh] sm:h-[160vh]'}>      
+   <div
+          className="sticky h-[52vh] sm:h-[85vh]"
           style={{ top: `calc(6rem + ${index * 14}px)`, zIndex: index + 1 }}
         >
         <motion.div
@@ -168,7 +168,7 @@ function ProjectCard({ project, index, total }: { project: typeof PROJECTS[numbe
           transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1] }}
           whileHover={{ borderColor: 'rgba(79,124,255,0.6)' }}
           style={{ scale, opacity, y }}
-          className="h-full overflow-hidden rounded-[40px] border-2 border-[#D7E2EA] bg-[#0C0C0C] p-4 transition-colors duration-300 sm:rounded-[50px] sm:p-6 md:rounded-[60px] md:p-8"
+          className="min-h-[420px] overflow-hidden rounded-[40px] border-2 border-[#D7E2EA] bg-[#0C0C0C] p-4 transition-colors duration-300 sm:rounded-[50px] sm:p-6 md:rounded-[60px] md:p-8"
         >
           <div className="flex h-full flex-col">
             {/* Top row */}
