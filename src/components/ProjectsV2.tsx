@@ -156,7 +156,7 @@ function ProjectCard({ project, index, total }: { project: typeof PROJECTS[numbe
 
   return (
     <div ref={wrapperRef} className="relative">
-      <div className={isLastCard ? 'h-[62vh] sm:h-[85vh]' : 'h-[124vh] sm:h-[180vh]'}>
+      <div className={isLastCard ? 'h-[62vh] sm:h-[85vh]' : 'h-[85vh] sm:h-[180vh]'}>
         <div
           className="sticky h-[62vh] sm:h-[85vh]"
           style={{ top: `calc(6rem + ${index * 14}px)`, zIndex: index + 1 }}

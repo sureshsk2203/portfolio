@@ -12,7 +12,7 @@ const NAV_LINKS = [
 
 export default function HeroV2() {
   return (
-    <section className="relative flex min-h-screen flex-col overflow-hidden sm:h-screen">
+    <section className="relative flex flex-col overflow-hidden sm:min-h-screen sm:h-screen">
       {/* Navbar */}
       <FadeIn delay={0} y={-20}>
         <nav className="relative z-20 flex items-center justify-between gap-2 px-5 pt-6 sm:px-6 md:px-10 md:pt-8">
@@ -55,11 +55,8 @@ export default function HeroV2() {
         </div>
       </div>
 
-      {/* Spacer to push bottom bar down on mobile where portrait is in normal flow */}
-      <div className="flex-1 sm:hidden" />
-
       {/* Bottom bar */}
-      <div className="relative z-20 mt-8 flex flex-col items-center gap-5 px-5 pb-8 sm:mt-auto sm:flex-row sm:items-end sm:justify-between sm:px-6 sm:pb-8 md:px-10 md:pb-10">
+      <div className="relative z-20 mt-14 flex flex-col items-center gap-5 px-5 pb-10 sm:mt-auto sm:flex-row sm:items-end sm:justify-between sm:px-6 sm:pb-8 md:px-10 md:pb-10">
         <FadeIn delay={0.35} y={20}>
           <p
             className="max-w-[260px] text-center font-light uppercase leading-snug tracking-wide text-[#D7E2EA] sm:max-w-[220px] sm:text-left md:max-w-[260px]"
