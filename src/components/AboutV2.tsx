@@ -5,25 +5,26 @@ import ContactButton from './ContactButton';
 
 export default function AboutV2() {
   return (
-    <section id="about" className="relative flex min-h-screen flex-col items-center justify-center px-5 py-20 sm:px-8 md:px-10">
-      {/* Corner decorations */}
-      <FadeIn delay={0.1} x={-80} y={0} duration={0.9} className="absolute left-[1%] top-[4%] z-0 sm:left-[2%] md:left-[4%]">
-        <div className="flex h-[120px] w-[120px] items-center justify-center rounded-3xl border border-line bg-panel/40 sm:h-[160px] sm:w-[160px] md:h-[210px] md:w-[210px]">
+    <section id="about" className="relative flex flex-col items-center justify-center px-5 py-16 sm:min-h-screen sm:px-8 sm:py-20 md:px-10">
+      {/* Corner decorations — desktop/tablet only; fixed-size + percentage positioning
+          doesn't scale consistently across different phone widths, so hide on mobile */}
+      <FadeIn delay={0.1} x={-80} y={0} duration={0.9} className="absolute left-[1%] top-[4%] z-0 hidden sm:block sm:left-[2%] md:left-[4%]">
+        <div className="hidden h-[160px] w-[160px] items-center justify-center rounded-3xl border border-line bg-panel/40 sm:flex md:h-[210px] md:w-[210px]">
           <Moon size={48} className="text-electric/40" strokeWidth={1.2} />
         </div>
       </FadeIn>
-      <FadeIn delay={0.25} x={-80} y={0} duration={0.9} className="absolute bottom-[8%] left-[3%] z-0 sm:left-[6%] md:left-[10%]">
-        <div className="flex h-[100px] w-[100px] items-center justify-center rounded-3xl border border-line bg-panel/40 sm:h-[140px] sm:w-[140px] md:h-[180px] md:w-[180px]">
+      <FadeIn delay={0.25} x={-80} y={0} duration={0.9} className="absolute bottom-[8%] left-[3%] z-0 hidden sm:block sm:left-[6%] md:left-[10%]">
+        <div className="hidden h-[140px] w-[140px] items-center justify-center rounded-3xl border border-line bg-panel/40 sm:flex md:h-[180px] md:w-[180px]">
           <Boxes size={40} className="text-teal/40" strokeWidth={1.2} />
         </div>
       </FadeIn>
-      <FadeIn delay={0.15} x={80} y={0} duration={0.9} className="absolute right-[1%] top-[4%] z-0 sm:right-[2%] md:right-[4%]">
-        <div className="flex h-[120px] w-[120px] items-center justify-center rounded-3xl border border-line bg-panel/40 sm:h-[160px] sm:w-[160px] md:h-[210px] md:w-[210px]">
+      <FadeIn delay={0.15} x={80} y={0} duration={0.9} className="absolute right-[1%] top-[4%] z-0 hidden sm:block sm:right-[2%] md:right-[4%]">
+        <div className="hidden h-[160px] w-[160px] items-center justify-center rounded-3xl border border-line bg-panel/40 sm:flex md:h-[210px] md:w-[210px]">
           <Blocks size={48} className="text-violet/40" strokeWidth={1.2} />
         </div>
       </FadeIn>
-      <FadeIn delay={0.3} x={80} y={0} duration={0.9} className="absolute bottom-[8%] right-[3%] z-0 sm:right-[6%] md:right-[10%]">
-        <div className="flex h-[130px] w-[130px] items-center justify-center rounded-3xl border border-line bg-panel/40 sm:h-[170px] sm:w-[170px] md:h-[220px] md:w-[220px]">
+      <FadeIn delay={0.3} x={80} y={0} duration={0.9} className="absolute bottom-[8%] right-[3%] z-0 hidden sm:block sm:right-[6%] md:right-[10%]">
+        <div className="hidden h-[170px] w-[170px] items-center justify-center rounded-3xl border border-line bg-panel/40 sm:flex md:h-[220px] md:w-[220px]">
           <Layers size={52} className="text-electric/40" strokeWidth={1.2} />
         </div>
       </FadeIn>
