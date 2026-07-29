@@ -1,6 +1,5 @@
 import { Moon, Blocks, Boxes, Layers } from 'lucide-react';
 import FadeIn from './FadeIn';
-import AnimatedText from './AnimatedText';
 import ContactButton from './ContactButton';
 
 export default function AboutV2() {
@@ -40,11 +39,14 @@ export default function AboutV2() {
           </h2>
         </FadeIn>
 
-        <AnimatedText
-          text="With more than one year of experience in design, i focus on branding, web design, and user experience, i truly enjoy working with businesses that aim to stand out and present their best image. Let's build something incredible together!"
-          className="max-w-[560px] text-center font-medium leading-relaxed text-[#D7E2EA]"
-          style={{ fontSize: 'clamp(1rem, 2vw, 1.35rem)' }}
-        />
+        <FadeIn delay={0.1} duration={0.8}>
+          <p
+            className="max-w-[560px] text-center font-medium leading-relaxed text-[#D7E2EA]"
+            style={{ fontSize: 'clamp(1rem, 2vw, 1.35rem)' }}
+          >
+            With more than one year of experience in design, i focus on branding, web design, and user experience, i truly enjoy working with businesses that aim to stand out and present their best image. Let&apos;s build something incredible together!
+          </p>
+        </FadeIn>
 
         <FadeIn delay={0.2} y={20}>
           <ContactButton />

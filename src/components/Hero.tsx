@@ -101,7 +101,7 @@ export default function Hero() {
             {/* laptop base */}
             <div className="mx-auto -mt-1 h-3 w-[85%] rounded-b-xl bg-gradient-to-b from-panel2 to-void" />
 
-            {/* Mobile mockup — Swift Pay */}
+            {/* Mobile mockup — Swft Pay */}
             <motion.div
               className="glass absolute -bottom-10 -right-2 z-20 w-32 rounded-2xl border border-line p-2 shadow-xl shadow-black/50 sm:-right-8 sm:w-40"
               animate={{ y: [0, -10, 0] }}
@@ -109,7 +109,7 @@ export default function Hero() {
             >
               <div className="rounded-xl bg-gradient-to-b from-panel to-void p-2.5">
                 <div className="mb-2 flex items-center justify-between">
-                  <span className="font-mono text-[8px] uppercase tracking-widest text-muted">Swift Pay</span>
+                  <span className="font-mono text-[8px] uppercase tracking-widest text-muted">Swft Pay</span>
                   <span className="h-1.5 w-1.5 rounded-full bg-teal" />
                 </div>
                 <div className="mb-2 h-8 rounded-lg bg-gradient-to-r from-electric/30 to-violet/30" />

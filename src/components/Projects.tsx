@@ -22,7 +22,7 @@ const PROJECTS = [
     iconColor: 'text-teal',
   },
   {
-    name: 'Swift Pay',
+    name: 'Swft Pay',
     category: 'Premium FinTech UI/UX Design',
     desc: 'A premium UPI payment mobile application with an original design system, clean user experience, and modern fintech interface.',
     tags: ['Figma', 'Design System', 'Fintech'],

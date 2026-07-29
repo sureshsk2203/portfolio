@@ -32,7 +32,7 @@ const PROJECTS = [
   },
   {
     num: '03',
-    name: 'Swift Pay',
+    name: 'Swft Pay',
     category: 'Premium FinTech UI/UX Design',
     images: [],
     icon: Wallet,
