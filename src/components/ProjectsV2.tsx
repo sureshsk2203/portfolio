@@ -50,8 +50,8 @@ const PROJECTS = [
   },
   {
     num: '05',
-    name: 'Vinayagar Temple — Vari Management',
-    category: 'Temple Devotee Vari Management Website',
+    name: 'Vinayagar Temple — Fund Management',
+    category: 'Temple Devotee Fund Management Website',
     images: [temple1, temple2],
     tint: 'from-[#BE4C00]/20 to-transparent',
     liveUrl: 'https://vinayagartempleambasamudram.netlify.app',
